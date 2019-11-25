@@ -1,0 +1,15 @@
+.Tables{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+}
+
+.edit-button{
+    display: flex;
+    /* flex-direction: column; */
+
+}
+
+.Tables .del {
+    display: none;
+}

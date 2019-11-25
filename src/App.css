@@ -1,12 +1,12 @@
-.App {
+.POS-YFCC-RIAU {
   text-align: center;
 }
 
-.App-logo {
+.POS-YFCC-RIAU-logo {
   height: 40vmin;
 }
 
-.App-header {
+.POS-YFCC-RIAU-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -17,6 +17,6 @@
   color: white;
 }
 
-.App-link {
+.POS-YFCC-RIAU-link {
   color: #09d3ac;
 }
