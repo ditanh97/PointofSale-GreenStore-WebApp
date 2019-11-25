@@ -14,14 +14,14 @@ export const getProducts = () => {
   
   return {
     type: 'GET_PRODUCTS',
-    payload: axios.get ('http://localhost:5000/products/', header),
+    payload: axios.get ('https://green-store-pos.herokuapp.com/products/', header),
   };
 };
 
 export const getProductsById = (id) => {
     return { 
         type: 'GET_PRODUCT',
-        payload: axios.get (`http://localhost:5000/products/show/${id}`, header),
+        payload: axios.get (`https://green-store-pos.herokuapp.com/products/show/${id}`, header),
       };
     };
 
@@ -29,14 +29,14 @@ export const getProductsById = (id) => {
 export const postProduct = (data) => {
   return {
     type: 'POST_PRODUCT',
-    payload: axios.post ('http://localhost:5000/products', data, header),
+    payload: axios.post ('https://green-store-pos.herokuapp.com/products', data, header),
   };
 };
 
 export const updateProduct = (id, data) => {
     const options = {
       method: 'put',
-      url: `http://localhost:5000/products/${id}`,
+      url: `https://green-store-pos.herokuapp.com/products/${id}`,
       data: data,
       header: header
     }
@@ -50,7 +50,7 @@ export const deleteProduct = (id) => {
     return {
       type: 'DELETE_PRODUCT',
       id,
-      payload: axios.delete (`http://localhost:5000/products/${id}`, header),
+      payload: axios.delete (`https://green-store-pos.herokuapp.com/products/${id}`, header),
     };
   };
 
@@ -63,7 +63,7 @@ export const sortProduct = (keyword, order) => {
     }
     return {
       type: 'SORT_PRODUCTS',
-      payload: axios.get (`http://localhost:5000/products/sort`, {query: ques}, header),
+      payload: axios.get (`https://green-store-pos.herokuapp.com/products/sort`, {query: ques}, header),
     };
   };
 
@@ -74,7 +74,7 @@ export const sortProduct = (keyword, order) => {
     }
     return {
       type: 'SEARCH_PRODUCTS',
-      payload: axios.get (`http://localhost:5000/products/search`, {query: ques}, header),
+      payload: axios.get (`https://green-store-pos.herokuapp.com/products/search`, {query: ques}, header),
     };
   };
 
@@ -86,6 +86,6 @@ export const sortProduct = (keyword, order) => {
     }
     return {
       type: 'PAGING_PRODUCT',
-      payload: axios.get (`http://localhost:5000/products/page`, {query: ques}, header),
+      payload: axios.get (`https://green-store-pos.herokuapp.com/products/page`, {query: ques}, header),
     };
   };
