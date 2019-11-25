@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux';
 
-import product from './crud-product-reducer';
-import category from './crud-category-reducer';
-import admin from './admin-reducer';
+import product from './product';
+import category from './category';
+import admin from './admin';
 
 export const appReducer = combineReducers({
     product,

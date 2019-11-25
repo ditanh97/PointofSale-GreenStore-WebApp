@@ -1,2 +1,2 @@
-export * from './admin-constants';
-export * from './alert-constants';
+export * from './admin';
+export * from './alert';

@@ -65,6 +65,7 @@ export const Login = (props) => {
   }
   const submit = async (e) => {
     e.preventDefault();
+    console.log("login")
     await dispatch (login(state));
     props.history.push('/home');     
   }

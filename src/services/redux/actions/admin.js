@@ -4,7 +4,7 @@ ACTION CREATORS RELATED TO ADMINS
 
 import adminMethod from '../../methods';
 import {adminConstants} from '../constants';
-import {alertActions} from './';
+import {alertActions} from '.';
 import axios from 'axios';
 
 export const login = (content) => {
@@ -14,7 +14,7 @@ const data = {
 }
 return {
     type: 'LOGIN',
-    payload: axios.post ('https://green-store-pos.herokuapp.com/login', data), // ('/') => kalau proxy nya sudah langsung ke arah login
+    payload: axios.post ('/', data), // ('/') => kalau proxy nya sudah langsung ke arah login
 };
 };
 
