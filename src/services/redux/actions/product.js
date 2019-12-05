@@ -1,56 +1,55 @@
 import axios from 'axios';
 import {authHeader} from '../../../helpers'
 
-const header = {
-    headers: authHeader()
-};
-
-const config = {
-    data: {},
-    headers: authHeader()
-}
-
 export const getProducts = () => {
-  
+  const header = {
+    headers: authHeader()
+  };  
   return {
     type: 'GET_PRODUCTS',
-    payload: axios.get ('https://green-store-pos.herokuapp.com/products/', header),
+    payload: axios.get (`${process.env.REACT_APP_API_URL}/products`, header),
   };
 };
 
 export const getProductsById = (id) => {
+    const header = {
+      headers: authHeader()
+    };  
     return { 
         type: 'GET_PRODUCT',
-        payload: axios.get (`https://green-store-pos.herokuapp.com/products/show/${id}`, header),
+        payload: axios.get (`${process.env.REACT_APP_API_URL}/products/show/${id}`, header),
       };
     };
 
 
 export const postProduct = (data) => {
+  const header = {
+    headers: authHeader()
+  };  
   return {
     type: 'POST_PRODUCT',
-    payload: axios.post ('https://green-store-pos.herokuapp.com/products', data, header),
+    payload: axios.post (`${process.env.REACT_APP_API_URL}/products`, data, header),
   };
 };
 
 export const updateProduct = (id, data) => {
-    const options = {
-      method: 'put',
-      url: `https://green-store-pos.herokuapp.com/products/${id}`,
-      data: data,
-      header: header
-    }
+    const header = {
+      headers: authHeader()
+    };  
     return {
       type: 'UPDATE_PRODUCT',
-      payload: axios(options),
+      payload: axios.put(`${process.env.REACT_APP_API_URL}/products/${id}`, data, header),
     };
   };
 
 export const deleteProduct = (id) => {
+    const header = {
+      headers: authHeader()
+    };  
     return {
       type: 'DELETE_PRODUCT',
       id,
-      payload: axios.delete (`https://green-store-pos.herokuapp.com/products/${id}`, header),
+      payload: axios.delete (`${process.env.REACT_APP_API_URL}/products/${id}`, header),
     };
   };
 
@@ -61,9 +60,12 @@ export const sortProduct = (keyword, order) => {
         "by":keyword, 
         "order": order
     }
+    const header = {
+      headers: authHeader()
+    };  
     return {
       type: 'SORT_PRODUCTS',
-      payload: axios.get (`https://green-store-pos.herokuapp.com/products/sort`, {query: ques}, header),
+      payload: axios.get (`${process.env.REACT_APP_API_URL}/products/sort`, {query: ques}, header),
     };
   };
 
@@ -72,9 +74,12 @@ export const sortProduct = (keyword, order) => {
     const ques = {
         "name":key,
     }
+    const header = {
+      headers: authHeader()
+    };  
     return {
       type: 'SEARCH_PRODUCTS',
-      payload: axios.get (`https://green-store-pos.herokuapp.com/products/search`, {query: ques}, header),
+      payload: axios.get (`${process.env.REACT_APP_API_URL}/products/search`, {query: ques}, header),
     };
   };
 
@@ -84,8 +89,11 @@ export const sortProduct = (keyword, order) => {
         "lim":limit, 
         "p": page
     }
+    const header = {
+      headers: authHeader()
+    };  
     return {
       type: 'PAGING_PRODUCT',
-      payload: axios.get (`https://green-store-pos.herokuapp.com/products/page`, {query: ques}, header),
+      payload: axios.get (`${process.env.REACT_APP_API_URL}/products/page`, {query: ques}, header),
     };
   };

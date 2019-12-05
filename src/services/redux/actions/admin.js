@@ -14,7 +14,7 @@ const data = {
 }
 return {
     type: 'LOGIN',
-    payload: axios.post ('/', data), // ('/') => kalau proxy nya sudah langsung ke arah login
+    payload: axios.post (`${process.env.REACT_APP_API_URL}/login`, data), // ('/') => kalau proxy nya sudah langsung ke arah login
 };
 };
 
@@ -34,6 +34,6 @@ const data = {
 }
 return {
     type: 'REGISTER',
-    payload: axios.post ('https://green-store-pos.herokuapp.com/register', data), // ('/') => kalau proxy nya sudah langsung ke arah login
+    payload: axios.post (`${process.env.REACT_APP_API_URL}/register`, data), // ('/') => kalau proxy nya sudah langsung ke arah login
 };
 };

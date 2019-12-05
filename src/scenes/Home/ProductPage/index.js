@@ -7,7 +7,6 @@ import { getProducts } from '../../../services/redux/actions';
 import './index.css';
 
 
-
 const ProductsTable = () => {
     const [state, setState] = useState({
         items: [],
@@ -24,6 +23,7 @@ const ProductsTable = () => {
 
     const addItemToState = (item) => {
         setState(prevState => ({
+        ...prevState,
         items: [...prevState.items, item]
         }))
     }
@@ -64,7 +64,6 @@ const ProductsTable = () => {
         <Row>
           <Col >
             <DataTable items={state.items} updateState={updateState} deleteItemFromState={deleteItemFromState} />
-            
           </Col>
         </Row>
         <Row>
@@ -75,6 +74,7 @@ const ProductsTable = () => {
       </Container>
     )
 }
+
 
   
 

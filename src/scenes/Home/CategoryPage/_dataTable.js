@@ -20,9 +20,9 @@ const DataTable = (props) => {
         }
         del();
     }
-    const items = category.categoryList.map(item => {
+    const items = category.categoryList.map((item, index) => {
       return (
-        <tr key={item.id}>
+        <tr key={index}>
           <th scope="row">{item.id}</th>
           <td>{item.category}</td>
           <td>{item.image}</td>

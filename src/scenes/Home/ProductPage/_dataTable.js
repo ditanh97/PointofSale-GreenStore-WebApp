@@ -20,9 +20,9 @@ const DataTable = (props) => {
         }
         del();
     }
-    const items = product.productList.map(item => {
+    const items = product.productList.map((item, index) => {
       return (
-        <tr key={item.id}>
+        <tr key={index}>
           <th scope="row">{item.id}</th>
           <td>{item.name}</td>
           <td>{item.description}</td>

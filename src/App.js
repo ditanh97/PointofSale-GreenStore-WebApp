@@ -13,12 +13,17 @@ function App() {
           <Switch>
               <Redirect exact from="/" to="/login"/>
               <Route path="/login" component={Login} />
-              {/* <Route path="/register" component={Register}/> */}
+              <Route path="/register" component={Register}/>
               <Authentication>
                 <Route path="/home" component={Home}/>
               </Authentication>
           </Switch>
         </Router>
+        {/* <Router>
+          <Route path="/home" component={Home}/>
+        </Router> */}
+        
+        
       {/* </header> */}
 
 

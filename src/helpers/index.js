@@ -9,10 +9,12 @@ https://jasonwatmore.com/post/2017/12/07/react-redux-jwt-authentication-tutorial
 export function authHeader() {
     let user = localStorage.getItem('user');
     let jwt = localStorage.getItem('jwt');
+    console.log('user', user);
+    console.log('jwt', jwt);
 
     if (user && jwt) {
-        return {"authorization" : jwt};
-          // return { 'Authorization': 'Bearer ' + user.token };
+        return { "authorization": jwt };
+        // return { 'Authorization': 'Bearer ' + user.token };
     } else {
         return {};
     }

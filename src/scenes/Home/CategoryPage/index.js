@@ -23,11 +23,10 @@ const CategoriesTable = () => {
     }
 
     const addItemToState = (item) => {
-        console.log('ddkdkkd')
-        setState(() => ({
-        ...state,
-        items: item
-        }))
+        setState(prevState => ({
+          ...prevState,
+          items: [...prevState.items, item]
+          }))
     }
 
     const updateState = (item) => {

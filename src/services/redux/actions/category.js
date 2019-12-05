@@ -1,44 +1,56 @@
 import axios from 'axios';
 import {authHeader} from '../../../helpers'
 
-const header = {
-    headers: authHeader()
-};
 
 export const getCategories = () => {
+  const header = {
+      headers: authHeader()
+  };
   return {
     type: 'GET_CATEGORIES',
-    payload: axios.get ('https://green-store-pos.herokuapp.com/categories', header),
+    payload: axios.get (`${process.env.REACT_APP_API_URL}/categories`, header),
   };
 };
 
 export const getCategory = (id) => {
-    return { 
-        type: 'GET_CATEGORY',
-        payload: axios.get (`https://green-store-pos.herokuapp.com/categories/${id}`, header),
-      };
+  const header = {
+      headers: authHeader()
+  };
+  return { 
+      type: 'GET_CATEGORY',
+      payload: axios.get (`${process.env.REACT_APP_API_URL}/categories/${id}`, header),
     };
+  };
 
 
 export const postCategory = (data) => {
+  const header = {
+    headers: authHeader()
+  };
   return {
     type: 'POST_CATEGORY',
-    payload: axios.post ('https://green-store-pos.herokuapp.com/categories', header, data),
+    payload: axios.post (`${process.env.REACT_APP_API_URL}/categories`, data, header),
   };
 };
 
 export const updateCategory = (id, data) => {
-    return {
-      type: 'UPDATE_CATEGORY',
-      payload: axios.put (`https://green-store-pos.herokuapp.com/categories/${id}`, data, header),
-    };
+  const header = {
+      headers: authHeader()
+  };
+  return {
+    type: 'UPDATE_CATEGORY',
+    payload: axios.put (`${process.env.REACT_APP_API_URL}/categories/${id}`, data, header),
+  };
   };
 
 export const deleteCategory = (id) => {
-    return {
-      type: 'DELETE_CATEGORY',
-      payload: axios.delete (`https://green-store-pos.herokuapp.com/categories/${id}`, header),
-    };
+  const header = {
+    headers: authHeader()
+  };
+  return {
+    type: 'DELETE_CATEGORY',
+    payload: axios.delete (`${process.env.REACT_APP_API_URL}/categories/${id}`, header),
+  };
   };
 
 
