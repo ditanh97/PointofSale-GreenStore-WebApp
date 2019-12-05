@@ -1,0 +1,18 @@
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+
+}
+
+.cards {
+    width: 800px;
+}
+
+.cart {
+    width: 200px;
+}
+
+.card {
+    width: 150px;
+}
